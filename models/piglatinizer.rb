@@ -2,8 +2,8 @@ class PigLatinizer
 
     def piglatinize(string)
         string = string.split(" ").map do |word|
-            if word.match(/^([^aeiouAEIOU]+)/)
-                first_letter = word.match(/^([^aeiouAEIOU]+)/)
+            first_letter = word.match(/^([^aeiouAEIOU]+)/)
+            if first_letter
                 "#{word.gsub(/^([^aeiouAEIOU])+/, "")}#{first_letter}ay"
             else 
                 "#{word}way"
